@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menus</title>
+    <style>
+        ul,li{margin: 0; padding: 0; list-style: none;}
+        .menu{border: 1px solid #1c1c1c; width: 80px; text-align: center; float: left; background-color: black;}
+        .menu a{text-decoration: none; color: green;}
+        .menu ul{
+            border: 1px solid #1c1c1c;
+            position: relative;
+            display: none;
+            
+        }
+        .menu li{background-color: green; color: white;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="menu">
+            <a href="#"><b>Menu</b></a>
+                <ul>
+                    <li>Chicken</li>
+                    <li>Spaghetti</li>
+                    <li>Burger</li>
+                </ul>
+        </li>
+        <li class="menu">
+            <a href="#"><b>Drinks</b></a>
+                <ul>
+                    <li>Redhorse</li>
+                    <li>Beer</li>
+                    <li>Gin</li>
+                </ul>
+
+        </li>
+    </ul>
+    <script src="code.jquery.com_jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("ul .menu").hover(
+                function(){
+                    $(this).css("background-color", "red");
+                    $(this).children("ul").slideDown("medium");  
+                },
+                function(){
+                    $(this).css("background-color","black");
+                    $(this).children("ul").hide(true);
+                }
+            );
+        });
+    </script>
+</body>
+</html>
